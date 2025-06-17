@@ -1,0 +1,42 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  h3 {
+    font-size: 18px;
+    color: rgba(61, 61, 61, 1);
+  }
+  h1 {
+    font-size: 50px;
+    color: rgba(61, 61, 61, 1);
+    width: 320px;
+    font-weight: 700;
+  }
+  p {
+    font-size: 16px;
+    color: rgba(114, 114, 114, 1);
+    width: 603px;
+  }
+  span {
+    color: rgba(70, 163, 88, 1);
+  }
+  button {
+    padding: 10px 20px;
+    background-color: rgba(70, 163, 88, 1);
+    border-radius: 5px;
+    color: aliceblue;
+  }
+}
+.home_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(70, 163, 88, 0.1);
+  padding: 10px 20px;
+  margin-top: 20px;
+  img {
+    width: 100%;
+    max-width: 420px;
+  }
+}

@@ -1,0 +1,30 @@
+.category {
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+  width: 40%;
+  // margin-top: 40px;
+  background-color: rgba(251, 251, 251, 1);
+  padding: 20px;
+  img {
+    width: 100%;
+    max-width: 330px;
+    margin-left: -30px;
+  }
+  h2 {
+    color: rgba(61, 61, 61, 1);
+    font-size: 22px;
+  }
+}
+.colichestva {
+  display: flex;
+  padding-left: 10px;
+  gap: 30px;
+  p {
+    width: 100%;
+    color: rgba(61, 61, 61, 1);
+  }
+  p:hover {
+    color: rgba(70, 163, 88, 1);
+  }
+}

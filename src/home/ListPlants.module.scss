@@ -1,0 +1,62 @@
+.plants_block {
+  display: flex;
+  flex-direction: column;
+  .all {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-block: 20px;
+    h2 {
+      color: rgba(61, 61, 61, 1);
+      font-size: 22px;
+    }
+    h2:hover {
+      color: rgba(70, 163, 88, 1);
+      border-bottom: 2px solid rgba(70, 163, 88, 1);
+      transition: 0.7s;
+    }
+  }
+}
+.box_plants {
+  display: flex;
+  align-items: center;
+  // justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 50px;
+  .plants {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: flex-start;
+    gap: 6px;
+    img {
+      width: 230px;
+      height: 230px;
+      background-color: rgba(245, 245, 245, 0.888);
+      padding: 20px 30px 50px;
+      border-radius: 10px;
+    }
+    h2 {
+      color: rgba(61, 61, 61, 1);
+      font-size: 22px;
+    }
+    p {
+      color: rgba(70, 163, 88, 1);
+    }
+  }
+  .ion {
+    display: none;
+    align-items: center;
+    gap: 8px;
+    font-size: 20px;
+    position: absolute;
+    left: 60px;
+    top: 200px;
+    color: rgba(61, 61, 61, 1);
+  }
+}
+.plants:hover {
+  .ion {
+    display: flex;
+  }
+}
