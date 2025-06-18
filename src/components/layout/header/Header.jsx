@@ -27,7 +27,7 @@ const Header = () => {
         <div className={scss.ion}>
           <input type="text" placeholder="search" />
           <IoSearchOutline className={scss.search} />
-          <FiShoppingCart />
+          <FiShoppingCart className={scss.shop} />
           <span onClick={() => navigate("/login")}>
             <IoIosLogOut /> login
           </span>

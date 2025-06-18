@@ -38,3 +38,17 @@
     padding: 0;
   }
 }
+.animation {
+  opacity: 0;
+  transform: translateY(20px);
+  span {
+    color: #46a358;
+  }
+  animation: fadeinUp 1s ease-out forwards;
+}
+@keyframes fadeinUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

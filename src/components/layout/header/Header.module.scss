@@ -23,7 +23,7 @@
   }
   .burger {
     display: none;
-    font-size: 20px;
+    font-size: 30px;
   }
   .ion {
     display: flex;
@@ -82,17 +82,31 @@
   .header {
     gap: 20px;
     img {
-      max-width: 70px;
+      max-width: 110px;
     }
     nav {
-      gap: 10px;
+      display: none;
+    }
+    .ion {
+      input {
+        padding: 6px;
+      }
+      .shop {
+        display: none;
+      }
     }
   }
 }
 @media (max-width: 475px) {
   .header {
     .ion {
-      display: none;
+      span {
+        display: none;
+      }
+      .search {
+        left: 140px;
+        font-size: 20px;
+      }
     }
     .burger {
       display: flex;

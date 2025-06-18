@@ -60,3 +60,46 @@
     display: flex;
   }
 }
+@media (max-width: 770px) {
+  .plants_block {
+    .all {
+      h2 {
+        max-width: 220px;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .plants_block {
+    .box_plants {
+      .plants {
+        img {
+          width: 208px;
+          height: 208px;
+          padding: 25px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 470px) {
+  .plants_block {
+    .all {
+      h2 {
+        font-size: 20px;
+      }
+    }
+    .box_plants {
+      gap: 22px;
+      .plants {
+        img {
+          width: 150px;
+          height: 155px;
+          padding: 13px;
+        }
+      }
+    }
+  }
+}

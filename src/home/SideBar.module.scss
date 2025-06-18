@@ -28,3 +28,8 @@
     color: rgba(70, 163, 88, 1);
   }
 }
+@media (max-width: 640px) {
+  .category {
+    display: none;
+  }
+}
