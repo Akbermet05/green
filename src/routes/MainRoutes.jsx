@@ -8,7 +8,7 @@ import Register from "../authentication/Register";
 const MainRoutes = () => {
   let routes = [
     {
-      link: "/home",
+      link: "/",
       element: <Home />,
     },
     {
