@@ -6,7 +6,7 @@ import SideBar from "./SideBar";
 const Home = () => {
   return (
     <div>
-      {/* <HomeBaner /> */}
+      <HomeBaner />
       <div
         className="container"
         style={{

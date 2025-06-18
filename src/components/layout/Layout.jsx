@@ -6,11 +6,11 @@ import MainRoutes from "../../routes/MainRoutes";
 const Layout = () => {
   return (
     <div className={scss.layout}>
-      {/* <Header /> */}
+      <Header />
       <main>
         <MainRoutes />
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };
