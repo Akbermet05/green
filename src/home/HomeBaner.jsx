@@ -8,12 +8,10 @@ const HomeBaner = () => {
       <div className={scss.home_box}>
         <div className={scss.home}>
           <h3>Welcome to GreenShop</h3>
-          {/* <h1 className="animation">
+          <h1 className="animation">
             Let’s Make a Better <span>Planet</span>
-          </h1> */}
-          <h1>
-            <HeroText />
           </h1>
+          {/* <div className={scss.ion}><HeroText /></div> */}
           <p>
             We are an online plant shop offering a wide range of cheap and
             trendy plants.
