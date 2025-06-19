@@ -19,8 +19,8 @@ const Home = () => {
         <SideBar />
         <ListPlants />
       </div>
-      <Plants />
-      <BlogPosts />
+      {/* <Plants /> */}
+      {/* <BlogPosts /> */}
     </div>
   );
 };
