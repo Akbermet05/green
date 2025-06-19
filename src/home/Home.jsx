@@ -2,6 +2,8 @@ import React from "react";
 import HomeBaner from "./HomeBaner";
 import ListPlants from "./ListPlants";
 import SideBar from "./SideBar";
+import Plants from "./Plants";
+import BlogPosts from "./BlogPosts";
 
 const Home = () => {
   return (
@@ -17,6 +19,8 @@ const Home = () => {
         <SideBar />
         <ListPlants />
       </div>
+      <Plants />
+      <BlogPosts />
     </div>
   );
 };

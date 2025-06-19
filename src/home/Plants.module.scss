@@ -1,0 +1,38 @@
+.plants {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-block: 50px;
+  .plants_block {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    .plants_box {
+      display: flex;
+      flex-direction: column;
+      text-align: end;
+      align-items: flex-end;
+      //   justify-content: center;
+      gap: 20px;
+      h1 {
+        font-size: 30px;
+        width: 230px;
+        color: rgba(61, 61, 61, 1);
+      }
+      p {
+        font-size: 18px;
+        width: 330px;
+      }
+      button {
+        background-color: rgba(70, 163, 88, 1);
+        padding: 10px 20px;
+        border-radius: 10px;
+        color: white;
+      }
+    }
+  }
+  img {
+    width: 100%;
+    max-width: 260px;
+  }
+}

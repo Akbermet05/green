@@ -93,13 +93,18 @@
       }
     }
     .box_plants {
+      .ion {
+        font-size: 17px;
+        left: 35px;
+        top: 134px;
+      }
       gap: 22px;
       justify-content: center;
       .plants {
         img {
           width: 150px;
           height: 155px;
-          padding: 13px;
+          padding: 13px 13px 26px 13px;
         }
       }
     }
