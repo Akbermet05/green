@@ -5,19 +5,25 @@ import { IoSearchOutline } from "react-icons/io5";
 import { FiShoppingCart } from "react-icons/fi";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { AiOutlineDelete } from "react-icons/ai";
+import PaginationPost from "./PaginationPost";
+import SelectShop from "../ui/select/SelectShop";
 
 const ListPlants = () => {
-  const { readShop, data, deleteShop } = useShop();
+  const { readShop, data, deleteShop, selectedColor, setSelectedColor } =
+    useShop();
   useEffect(() => {
     readShop();
   }, []);
   return (
     <div className="container">
       <div className={scss.plants_block}>
-        <div className={scss.all}>
-          <h2>All Plants</h2>
-          <h2>New Arrivals</h2>
-          <h2>Sale</h2>
+        <div className={scss.category}>
+          <div className={scss.all}>
+            <h2>All Plants</h2>
+            <h2>New Arrivals</h2>
+            <h2>Sale</h2>
+          </div>
+          <SelectShop />
         </div>
         <div className={scss.box_plants}>
           {data.map((el, index) => (
@@ -28,17 +34,14 @@ const ListPlants = () => {
                 <IoMdHeartEmpty />
                 <AiOutlineDelete onClick={() => deleteShop(el._id)} />
               </div>
-              {/* <div className={scss.ion}>
-              <IoSearchOutline />
-              <FiShoppingCart />
-              <IoMdHeartEmpty />
-              </div> */}
               <img src={el.link} alt="" />
               <h2>{el.name}</h2>
+              <p>{el.plants}</p>
               <p>${el.price}</p>
             </div>
           ))}
         </div>
+        <PaginationPost />
       </div>
     </div>
   );

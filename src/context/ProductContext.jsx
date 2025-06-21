@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useContext, useReducer } from "react";
+import React, { useContext, useReducer, useState } from "react";
 import { createContext } from "react";
 import { API } from "../helpers/const";
 const productContext = createContext();
@@ -19,11 +19,23 @@ const reducer = (state = initialState, action) => {
 };
 const ProductContext = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
+  const [totalPage, setTotalPage] = useState(5);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [searchValue, setSearchValue] = useState("");
+  const [selectedColor, setSelectedColor] = useState("All");
+
   async function addShop(add) {
     await axios.post(API, add);
   }
   async function readShop() {
-    let { data } = await axios.get(API);
+    let { data } = await axios.get(
+      `${API}?per_page=6&current_page=${currentPage}&searchKey=name&searchValue=${searchValue}${
+        selectedColor !== "All"
+          ? `&searchKey=plants&searchValue=${selectedColor}`
+          : ""
+      }`
+    );
+    setTotalPage(data.total_pages);
     dispatch({
       type: "GET",
       payload: data.data,
@@ -38,6 +50,13 @@ const ProductContext = ({ children }) => {
     readShop,
     deleteShop,
     data: state.value,
+    searchValue,
+    setSearchValue,
+    totalPage,
+    currentPage,
+    setCurrentPage,
+    selectedColor,
+    setSelectedColor,
   };
 
   return (

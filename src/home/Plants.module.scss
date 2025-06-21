@@ -34,5 +34,87 @@
   img {
     width: 100%;
     max-width: 260px;
+    background-color: none;
+  }
+}
+@media (max-width: 1200px) {
+  .plants {
+    gap: 10px;
+    img {
+      max-width: 202px;
+    }
+    .plants_block {
+      .plants_box {
+        align-items: flex-start;
+        text-align: center;
+        h1 {
+          font-size: 20px;
+        }
+        p {
+          font-size: 14px;
+          width: 250px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1024px) {
+  .plants {
+    img {
+      max-width: 162px;
+    }
+    .plants_block {
+      .plants_box {
+        h1 {
+          font-size: 15px;
+          width: 120px;
+        }
+        p {
+          width: 180px;
+        }
+        button {
+          padding: 8px 5px;
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 769px) {
+  .plants {
+    width: 100%;
+    img {
+      max-width: 200px;
+    }
+    .plants_block {
+      flex-direction: column;
+      // gap: 10px;
+      .plants_box {
+        align-items: center;
+        h1 {
+          width: 140px;
+          font-size: 18px;
+        }
+        p {
+          width: 167px;
+        }
+        button {
+          padding: 10px 25px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 475px) {
+  .plants {
+    padding-block: 20px;
+    .plants_block {
+      .plants_box {
+        gap: 10px;
+        p{
+          font-size: 12px;
+        }
+      }
+    }
   }
 }

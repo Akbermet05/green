@@ -4,11 +4,10 @@ import ListPlants from "./ListPlants";
 import SideBar from "./SideBar";
 import Plants from "./Plants";
 import BlogPosts from "./BlogPosts";
-
 const Home = () => {
   return (
     <div>
-      <HomeBaner />
+      <HomeBaner /> 
       <div
         className="container"
         style={{
@@ -19,8 +18,8 @@ const Home = () => {
         <SideBar />
         <ListPlants />
       </div>
-      {/* <Plants /> */}
-      {/* <BlogPosts /> */}
+      <Plants />
+      <BlogPosts />
     </div>
   );
 };

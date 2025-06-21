@@ -17,10 +17,14 @@
     }
   }
 }
+.category {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .box_plants {
   display: flex;
   align-items: center;
-  // justify-content: space-between;
   flex-wrap: wrap;
   gap: 50px;
   .plants {
@@ -106,6 +110,16 @@
           height: 155px;
           padding: 13px 13px 26px 13px;
         }
+      }
+    }
+  }
+}
+
+@media (max-width: 460px) {
+  .plants_block {
+    .category {
+      h2 {
+        font-size: 15px;
       }
     }
   }

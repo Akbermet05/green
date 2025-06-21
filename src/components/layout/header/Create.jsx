@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { use, useState } from "react";
 import scss from "./Create.module.scss";
 import { useShop } from "../../../context/ProductContext";
 import { Link } from "react-router-dom";
@@ -7,6 +7,7 @@ const Create = () => {
   const [link, setLink] = useState("");
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
+  const [plants, setPlants] = useState("");
   return (
     <div className="container">
       <div className={scss.create}>
@@ -23,22 +24,28 @@ const Create = () => {
           placeholder="name"
         />
         <input
+          onChange={(e) => setPlants(e.target.value)}
+          type="text"
+          placeholder="plants category"
+        />
+        <input
           onChange={(e) => setPrice(e.target.value)}
           type="text"
           placeholder="price"
         />
         {/* <Link to="/home"> */}
-          <button
-            onClick={() =>
-              addShop({
-                link: link,
-                name: name,
-                price: price,
-              })
-            }
-          >
-            create
-          </button>
+        <button
+          onClick={() =>
+            addShop({
+              link: link,
+              name: name,
+              plants: plants,
+              price: price,
+            })
+          }
+        >
+          create
+        </button>
         {/* </Link> */}
       </div>
     </div>
