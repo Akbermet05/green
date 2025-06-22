@@ -27,3 +27,46 @@
     border: 1px solid rgb(179, 199, 148);
   }
 }
+@media (max-width: 1200px) {
+  .create {
+    margin-inline: 430px;
+  }
+}
+@media (max-width: 1044px) {
+  .create {
+    margin-inline: 360px;
+  }
+}
+@media (max-width: 770px) {
+  .create {
+    margin-inline: 240px;
+  }
+}
+@media (max-width: 644px) {
+  .create {
+    margin-inline: 100px;
+    padding: 10px;
+  }
+}
+@media (max-width: 490px) {
+  .create {
+    width: 300px;
+    height: 310px;
+    gap: 7px;
+    margin-block: 30px;
+    input {
+      padding: 10px 5px;
+      font-size: 12px;
+    }
+    h1 {
+      font-size: 20px;
+    }
+  }
+}
+@media (max-width: 470px) {
+  .create {
+    margin-inline: 40px;
+    height: 280px;
+    width: 270px;
+  }
+}
