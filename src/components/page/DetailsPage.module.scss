@@ -1,0 +1,260 @@
+.block {
+  display: flex;
+  flex-direction: column;
+  .page {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 40px;
+  }
+  .plants_box {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+    padding-block: 50px;
+    margin-bottom: 60px;
+    background-color: rgba(251, 251, 251, 1);
+    .image {
+      width: 330px;
+      height: 330px;
+      border-radius: 10px;
+    }
+    .information {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: flex-start;
+      span {
+        color: rgba(70, 163, 88, 1);
+        font-size: 18px;
+        font-weight: 600;
+      }
+      h1 {
+        font-size: 35px;
+      }
+      .l {
+        display: flex;
+        align-items: center;
+        gap: 160px;
+        border-bottom: 1.5px solid rgba(70, 163, 88, 0.5);
+        padding-bottom: 10px;
+        p {
+          width: 100%;
+          max-width: 420px;
+          color: rgba(70, 163, 88, 1);
+          font-size: 20px;
+          font-weight: 600;
+        }
+        img {
+          width: 100%;
+        }
+        h3 {
+          font-size: 18px;
+        }
+        .star {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          h3 {
+            width: 320px;
+            font-size: 18px;
+          }
+        }
+      }
+      p {
+        width: 490px;
+        font-size: 15px;
+        line-height: 24px;
+      }
+      .products {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        img {
+          width: 100%;
+          max-width: 20px;
+          max-height: 20px;
+        }
+      }
+    }
+  }
+}
+p,
+h1,
+h3 {
+  color: rgba(61, 61, 61, 1);
+}
+.btns {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  button {
+    padding: 10px 20px;
+    background-color: rgba(70, 163, 88, 1);
+    border-radius: 10px;
+    color: white;
+    font-size: 14px;
+  }
+  button:last-child {
+    background-color: rgb(240, 242, 241);
+    border: 2px solid rgba(70, 163, 88, 1);
+    color: rgba(70, 163, 88, 1);
+  }
+}
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  .rout {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 20px;
+    h3 {
+      font-size: 22px;
+    }
+    h3:hover {
+      color: rgba(70, 163, 88, 1);
+      border-bottom: 2px solid rgba(70, 163, 88, 1);
+    }
+  }
+  p {
+    font-size: 16px;
+    line-height: 26px;
+    color: rgba(114, 114, 114, 1);
+  }
+}
+@media (max-width: 1200px) {
+  .block {
+    .information {
+      .l {
+        .star {
+          h3 {
+            width: 120px;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1024px) {
+  .block {
+    .plants_box {
+      .image {
+        width: 290px;
+        height: 279px;
+      }
+      .information {
+        width: 100%;
+        max-width: 420px;
+        .l {
+          width: 360px;
+          gap: 16px;
+          .star {
+            h3 {
+              font-size: 14px;
+            }
+          }
+        }
+        p {
+          width: 368px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 769px) {
+  // max-width: 706px;
+
+  .block {
+    .plants_box {
+      .information {
+        p {
+          width: 290px;
+          font-size: 13px;
+        }
+        .l {
+          p {
+            max-width: 262px;
+            font-size: 17px;
+          }
+        }
+      }
+      .image {
+        width: 256px;
+        height: 245px;
+      }
+    }
+  }
+}
+
+@media (max-width: 643px) {
+  .block {
+    .plants_box {
+      flex-direction: column;
+      align-items: center;
+      padding-block: 10px;
+    }
+  }
+  .description {
+    p {
+      font-size: 13px;
+      line-height: 20px;
+    }
+  }
+}
+@media (max-width: 475px) {
+  .block {
+    .page {
+      padding-bottom: 23px;
+    }
+    .plants_box {
+      .image {
+        width: 313px;
+        height: 285px;
+      }
+      .information {
+        // padding-left: 30px;
+        gap: 10px;
+        h1 {
+          font-size: 30px;
+        }
+        p {
+          width: 345px;
+          font-size: 14px;
+          line-height: 20px;
+        }
+        h3 {
+          font-size: 15px;
+        }
+        .l {
+          display: none;
+        }
+        .btns {
+          button {
+            padding: 7px 15px;
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+  .description {
+    .rout {
+      h3 {
+        font-size: 18px;
+      }
+      padding-bottom: 9px;
+    }
+    .p {
+      display: none;
+    }
+    br {
+      display: none;
+    }
+  }
+}

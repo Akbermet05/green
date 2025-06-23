@@ -7,16 +7,23 @@ export const useShop = () => useContext(productContext);
 
 const initialState = {
   value: [],
+  oneTask: {},
+  plants: JSON.parse(localStorage.getItem("cart")) || [],
 };
+
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case "GET":
       return { ...state, value: action.payload };
-
+    case "GET_TASK":
+      return { ...state, oneTask: action.payload };
+    case "GET_CART":
+      return { ...state, plants: action.payload };
     default:
       return state;
   }
 };
+
 const ProductContext = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [totalPage, setTotalPage] = useState(5);
@@ -27,6 +34,7 @@ const ProductContext = ({ children }) => {
   async function addShop(add) {
     await axios.post(API, add);
   }
+
   async function readShop() {
     let { data } = await axios.get(
       `${API}?per_page=6&current_page=${currentPage}&searchKey=name&searchValue=${searchValue}${
@@ -41,10 +49,39 @@ const ProductContext = ({ children }) => {
       payload: data.data,
     });
   }
+
+  async function Task(id) {
+    let { data } = await axios.get(`${API}/${id}`);
+    dispatch({
+      type: "GET_TASK",
+      payload: data,
+    });
+  }
+
   async function deleteShop(id) {
     await axios.delete(`${API}/${id}`);
     readShop();
   }
+
+  // --------------->
+  function cart(plants) {
+    const data = JSON.parse(localStorage.getItem("cart")) || [];
+    const cart = [...data, plants];
+    localStorage.setItem("cart", JSON.stringify(cart));
+    dispatch({
+      type: "GET_CART",
+      payload: plants,
+    });
+  }
+
+  function deleteShop(id) {
+    const data = JSON.parse(localStorage.getItem("cart")) || [];
+    data = data.filter((el) => el.id !== id);
+    localStorage.setItem("cart", JSON.stringify(data));
+    // cart();
+  }
+  // cart
+
   const values = {
     addShop,
     readShop,
@@ -57,6 +94,11 @@ const ProductContext = ({ children }) => {
     setCurrentPage,
     selectedColor,
     setSelectedColor,
+    Task,
+    oneTask: state.oneTask,
+    cart,
+    plants: state.plants,
+    deleteShop,
   };
 
   return (

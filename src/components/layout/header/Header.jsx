@@ -61,6 +61,8 @@ import { CiSearch, CiShoppingCart } from "react-icons/ci";
 import { FaTimes, FaBars, FaPlus } from "react-icons/fa";
 import { useShop } from "../../../context/ProductContext";
 import { useEffect } from "react";
+import { LuShoppingCart } from "react-icons/lu";
+
 // import { usePlants } from "../../context/ProductContext";
 
 const Header = () => {
@@ -96,9 +98,9 @@ const Header = () => {
             className={scss.searchinput}
             placeholder="Search..."
           />
-          <button className={scss.icon}>
-            <CiShoppingCart size={20} />
-          </button>
+          <p className={scss.icon}>
+            <LuShoppingCart size={20} />
+          </p>
         </div>
       </div>
     </div>

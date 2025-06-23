@@ -7,13 +7,14 @@ import { IoMdHeartEmpty } from "react-icons/io";
 import { AiOutlineDelete } from "react-icons/ai";
 import PaginationPost from "./PaginationPost";
 import SelectShop from "../ui/select/SelectShop";
+import { useNavigate } from "react-router-dom";
 
 const ListPlants = () => {
-  const { readShop, data, deleteShop, selectedColor, setSelectedColor } =
-    useShop();
+  const { readShop, data, deleteShop, setSelectedColor } = useShop();
   useEffect(() => {
     readShop();
   }, []);
+  const navigate = useNavigate();
   return (
     <div className="container">
       <div className={scss.plants_block}>
@@ -34,7 +35,11 @@ const ListPlants = () => {
                 <IoMdHeartEmpty />
                 <AiOutlineDelete onClick={() => deleteShop(el._id)} />
               </div>
-              <img src={el.link} alt="" />
+              <img
+                onClick={() => navigate(`/details/${el._id}`)}
+                src={el.link}
+                alt=""
+              />
               <h2>{el.name}</h2>
               <p>{el.plants}</p>
               <p>${el.price}</p>

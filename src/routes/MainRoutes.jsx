@@ -4,6 +4,8 @@ import Home from "../home/Home";
 import Create from "../components/layout/header/Create";
 import Login from "../authentication/Login";
 import Register from "../authentication/Register";
+import DetailsPage from "../components/page/DetailsPage";
+import CartPage from "../components/page/CartPage";
 
 const MainRoutes = () => {
   let routes = [
@@ -23,6 +25,8 @@ const MainRoutes = () => {
       link: "/register",
       element: <Register />,
     },
+    { link: "/details/:id", element: <DetailsPage /> },
+    { link: "/cart/:id", element: <CartPage /> },
   ];
   return (
     <Routes>

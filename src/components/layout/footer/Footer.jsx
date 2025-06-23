@@ -6,8 +6,8 @@ import measasge from "../../../assets/message.svg";
 import phone from "../../../assets/phone.svg";
 import chat from "../../../assets/Facebook.svg";
 import chat1 from "../../../assets/Instagram.svg";
-import chat2 from "../../../assets/Linkedin (1).svg";
 import chat3 from "../../../assets/Twitter.svg";
+import chat2 from "../../../assets/Linkedin (1).svg";
 import chat4 from "../../../assets/Union.svg";
 import chat5 from "../../../assets/visa.svg";
 import image from "../../../assets/iamge.svg";
@@ -114,7 +114,7 @@ const Footer = () => {
               <br />
               <div className={scss.cart}>
                 <img src={phone} alt="" />
-                <p>+88  717 490</p>
+                <p>+88 717 490</p>
               </div>
             </div>
             <div className={scss.media1}>
