@@ -4,7 +4,7 @@ import scss from "./CartPage.module.scss";
 import { MdOutlineDeleteOutline } from "react-icons/md";
 import logo from "../../assets/4.svg";
 const CartPage = () => {
-  const { plants, deleteShop } = useShop();
+  const { plants } = useShop();
 
   return (
     <div className="container">
@@ -34,7 +34,7 @@ const CartPage = () => {
         <div className={scss.ion}>
           <p>$238.00</p>
           <span>
-            <MdOutlineDeleteOutline onClick={() => deleteShop(plants.id)} />
+            <MdOutlineDeleteOutline />
           </span>
         </div>
       </div>

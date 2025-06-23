@@ -74,12 +74,6 @@ const ProductContext = ({ children }) => {
     });
   }
 
-  function deleteShop(id) {
-    const data = JSON.parse(localStorage.getItem("cart")) || [];
-    data = data.filter((el) => el.id !== id);
-    localStorage.setItem("cart", JSON.stringify(data));
-    // cart();
-  }
   // cart
 
   const values = {
@@ -98,7 +92,6 @@ const ProductContext = ({ children }) => {
     oneTask: state.oneTask,
     cart,
     plants: state.plants,
-    deleteShop,
   };
 
   return (
