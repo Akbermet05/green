@@ -8,9 +8,12 @@ import { AiOutlineDelete } from "react-icons/ai";
 import PaginationPost from "./PaginationPost";
 import SelectShop from "../ui/select/SelectShop";
 import { useNavigate } from "react-router-dom";
+import Zoom from "react-medium-image-zoom";
+import "react-medium-image-zoom/dist/styles.css";
 
 const ListPlants = () => {
-  const { readShop, data, deleteShop, setSelectedColor } = useShop();
+  const { readShop, data, deleteShop, selectedColor, setSelectedColor } =
+    useShop();
   useEffect(() => {
     readShop();
   }, []);
@@ -30,16 +33,16 @@ const ListPlants = () => {
           {data.map((el, index) => (
             <div key={index} className={scss.plants}>
               <div className={scss.ion}>
-                <IoSearchOutline />
+                <IoSearchOutline
+                  onClick={() => navigate(`/details/${el._id}`)}
+                />
                 <FiShoppingCart />
                 <IoMdHeartEmpty />
                 <AiOutlineDelete onClick={() => deleteShop(el._id)} />
               </div>
-              <img
-                onClick={() => navigate(`/details/${el._id}`)}
-                src={el.link}
-                alt=""
-              />
+              <Zoom>
+                <img src={el.link} alt="" />
+              </Zoom>
               <h2>{el.name}</h2>
               <p>{el.plants}</p>
               <p>${el.price}</p>

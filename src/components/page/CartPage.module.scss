@@ -1,8 +1,15 @@
+.plants_box {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  width: 100%;
+  padding-block: 50px;
+}
 .block {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 10px;
+  gap: 20px;
   p {
     font-size: 15px;
   }
@@ -27,15 +34,19 @@
     color: white;
   }
 }
+.cart_box1 {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
 .cart_box {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: rgba(225, 222, 222, 0.842);
-  width: 940px;
+  background-color: rgba(251, 251, 251, 1);
+  width: 800px;
   padding: 20px 30px;
-  margin-inline: 150px;
-  margin-bottom: 150px;
+  // margin-bottom: 150px;
   margin-top: 40px;
   .ion {
     display: flex;
@@ -47,6 +58,83 @@
     }
     p {
       color: rgba(38, 99, 39, 0.963);
+    }
+  }
+}
+.total {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  .Subtotal {
+    display: flex;
+    justify-content: space-between;
+    gap: 80px;
+  }
+  .input {
+    display: flex;
+    input {
+      width: 210px;
+      height: 35px;
+      border: 2px solid rgba(70, 163, 88, 1);
+      padding-left: 10px;
+    }
+    button {
+      padding: 8px 12px;
+      background-color: rgba(70, 163, 88, 1);
+      color: white;
+    }
+  }
+  .btn {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    h3 {
+      font-size: 14px;
+      color: rgba(70, 163, 88, 1);
+    }
+    button {
+      padding: 10px 50px;
+      background-color: rgba(70, 163, 88, 1);
+      color: white;
+      font-size: 14px;
+    }
+  }
+}
+p,
+h2 {
+  color: rgba(61, 61, 61, 1);
+}
+@media (max-width: 1200px) {
+  .cart_box1 {
+    .cart_box {
+      width: 674px;
+      padding: 9px 24px;
+      margin-top: 29px;
+      .box_image {
+        img {
+          max-width: 97px;
+        }
+      }
+    }
+    .block {
+      gap: 6px;
+    }
+  }
+  .total {
+    .input {
+      input {
+        width: 162px;
+      }
+    }
+    .Subtotal {
+      gap: 61px;
+    }
+    .btn {
+      button {
+        font-size: 12px;
+      }
     }
   }
 }

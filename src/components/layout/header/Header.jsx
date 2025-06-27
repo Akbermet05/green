@@ -90,7 +90,7 @@ const Header = () => {
           </Link>
         </nav>
 
-        <div iv className={scss.actions}>
+        <div className={scss.actions}>
           <input
             type="text"
             value={searchValue}

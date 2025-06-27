@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useContext, useReducer, useState } from "react";
+import React, { useContext, useEffect, useReducer, useState } from "react";
 import { createContext } from "react";
 import { API } from "../helpers/const";
 const productContext = createContext();
@@ -8,7 +8,7 @@ export const useShop = () => useContext(productContext);
 const initialState = {
   value: [],
   oneTask: {},
-  plants: JSON.parse(localStorage.getItem("cart")) || [],
+  // plants: JSON.parse(localStorage.getItem("basket")) || [],
 };
 
 const reducer = (state = initialState, action) => {
@@ -64,18 +64,50 @@ const ProductContext = ({ children }) => {
   }
 
   // --------------->
-  function cart(plants) {
-    const data = JSON.parse(localStorage.getItem("cart")) || [];
-    const cart = [...data, plants];
-    localStorage.setItem("cart", JSON.stringify(cart));
-    dispatch({
-      type: "GET_CART",
-      payload: plants,
-    });
-  }
+  // function cart(plants) {
+  //   const data = JSON.parse(localStorage.getItem("cart")) || [];
+  //   const cart = [...data, plants];
+  //   localStorage.setItem("cart", JSON.stringify(cart));
+  //   dispatch({
+  //     type: "GET_CART",
+  //     payload: plants,
+  //   });
+  // }
+  // function deleteShop(id) {
+  //   const data = JSON.parse(localStorage.getItem("cart")) || [];
+  //   const no = data.filter((el) => el._id !== id);
+  //   localStorage.setItem("cart", JSON.stringify(no));
+  //   dispatch({
+  //     type: "GET_CART",
+  //     payload: no,
+  //   });
+  // }
 
+  // function addProductToCard(product) {
+  //   let card = JSON.parse(localStorage.getItem("card"));
+  //   if (!card) {
+  //     card = {
+  //       products: [],
+  //       totalPrice: 0,
+  //     };
+  //   }
+  //   let newProduct = {
+  //     item: product,
+  //     count: 1,
+  //     subPrice: +product,
+  //   };
+  //   card.products.push(newProduct);
+  //   localStorage.setItem("card", JSON.stringify(card));
+  // }
   // cart
 
+  const [basket, setBasket] = useState([]);
+
+  const addToCart = (add) => {
+    setBasket([...basket, add]);
+    readShop();
+  };
+  const totalPrice = basket.reduce((sum, item) => sum + item.price, 0);
   const values = {
     addShop,
     readShop,
@@ -90,8 +122,11 @@ const ProductContext = ({ children }) => {
     setSelectedColor,
     Task,
     oneTask: state.oneTask,
-    cart,
-    plants: state.plants,
+    // plants: state.plants,
+    // cart,
+    basket,
+    addToCart,
+    totalPrice,
   };
 
   return (

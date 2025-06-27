@@ -3,25 +3,29 @@ import { useShop } from "../../context/ProductContext";
 import chat from "../../assets/Facebook.svg";
 import chat3 from "../../assets/Twitter.svg";
 import chat2 from "../../assets/Linkedin (1).svg";
-// import chat5 from "../../assets/visa.svg";
 import { FaRegStar } from "react-icons/fa";
 import { FaMessage } from "react-icons/fa6";
 import scss from "./DetailsPage.module.scss";
 import { useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import BlogPosts from "../../home/BlogPosts";
-const DetailsPage = () => {
-  const { oneTask, Task, cart } = useShop();
+const DetailsPage = ({ product }) => {
+  const { oneTask, Task, addToCart } = useShop();
   const { id } = useParams();
   const navigate = useNavigate();
-  function handle() {
-    cart(oneTask);
-    navigate(`/cart/${oneTask._id}`);
-  }
+  // function handle() {
+  //   cart(oneTask);
+  //   navigate(`/cart/${oneTask._id}`);
+  // }
 
   useEffect(() => {
     Task(id);
   }, []);
+  const handleAdd = () => {
+    addToCart(product);
+    navigate("/cart");
+  };
+
   return (
     <div className="container">
       <div className={scss.block}>
@@ -37,10 +41,10 @@ const DetailsPage = () => {
               <p>
                 <div className={scss.star}>
                   <FaRegStar />
+                  {/* <FaRegStar />
                   <FaRegStar />
                   <FaRegStar />
-                  <FaRegStar />
-                  <FaRegStar />
+                  <FaRegStar /> */}
                   <h3>19 Customer Review</h3>
                 </div>
               </p>
@@ -54,7 +58,17 @@ const DetailsPage = () => {
             </p>
             <div className={scss.btns}>
               <button>Buy NOW</button>
-              <button onClick={handle}>Add to cart</button>
+              <button onClick={handleAdd}>Add to cart</button>
+            </div>
+            <div className={scss.star1}>
+              <span>
+                <FaRegStar />
+                <FaRegStar />
+                <FaRegStar />
+                <FaRegStar />
+                <FaRegStar />
+              </span>
+              <h3>19 Customer Review</h3>
             </div>
             <p>SKU: 1995751877966</p>
             <p>
@@ -123,7 +137,7 @@ const DetailsPage = () => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </p>
         </div>
-        {/* <BlogPosts /> */}
+        <BlogPosts />
       </div>
     </div>
   );

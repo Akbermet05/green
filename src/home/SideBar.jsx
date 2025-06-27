@@ -3,13 +3,6 @@ import scss from "./SideBar.module.scss";
 import logo from "../assets/super.svg";
 const SideBar = () => {
   return (
-    // <div className="container">
-    // <div className={scss.box}>
-    // <div className={scss.al}>
-    // <h2>All Plants</h2>
-    // <h2>New Arrivals</h2>
-    // <h2>Sale</h2>
-    // </div>
     <div className={scss.category}>
       <h2>Categories</h2>
       <div className={scss.colichestva}>

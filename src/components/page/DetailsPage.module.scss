@@ -17,8 +17,8 @@
     margin-bottom: 60px;
     background-color: rgba(251, 251, 251, 1);
     .image {
-      width: 330px;
-      height: 330px;
+      width: 410px;
+      height: 340px;
       border-radius: 10px;
     }
     .information {
@@ -125,6 +125,15 @@ h3 {
     font-size: 16px;
     line-height: 26px;
     color: rgba(114, 114, 114, 1);
+  }
+}
+.star1 {
+  display: none;
+  align-items: center;
+  gap: 10px;
+  h3 {
+    width: 320px;
+    font-size: 18px;
   }
 }
 @media (max-width: 1200px) {
@@ -239,6 +248,15 @@ h3 {
             padding: 7px 15px;
             font-size: 12px;
           }
+        }
+      }
+      .star1 {
+        display: flex;
+        padding-block: 10px;
+        span {
+          width: 100%;
+          max-width: 120px;
+          // color: yellow;
         }
       }
     }

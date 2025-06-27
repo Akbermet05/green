@@ -1,33 +1,27 @@
-import React, { useState } from "react";
-// import "./index.scss";
-import { Select } from "antd";
-
-const OPTIONS = [
-  "House Plants",
-  "Potter Plants",
-  "Seeds",
-  "Small Plants",
-  "Big Plants",
-  "Gardening",
-];
+import React, { useEffect } from "react";
+import { useShop } from "../../context/ProductContext";
 
 const SelectShop = () => {
-  const [selectedItems, setSelectedItems] = useState([]);
-
-  const filteredOptions = OPTIONS.filter((el) => !selectedItems.includes(el));
+  const { setSelectedColor, readShop, selectedColor } = useShop();
+  useEffect(() => {
+    readShop();
+  }, [selectedColor]);
 
   return (
-    <Select
-      // mode="multiple"
-      placeholder="category flower"
-      value={selectedItems}
-      onChange={setSelectedItems}
-      style={{ width: "30%", height: "20%" }}
-      options={filteredOptions.map((item) => ({
-        value: item,
-        label: item,
-      }))}
-    />
+    <select
+      onChange={(e) => setSelectedColor(e.target.value)}
+      style={{ border: "1px solid black", width: "120px", height: "20px" }}
+      class="form-select"
+      aria-label="Default select example"
+    >
+      <option selected>Category</option>
+      <option value="all">All</option>
+      <option value="house plants">House Plants</option>
+      <option value="potter plants">Potter Plants</option>
+      <option value="seeds">Seeds</option>
+      <option value="small plants">Small Plants</option>
+      <option value="big plants">Big Plants</option>
+    </select>
   );
 };
 
