@@ -7,12 +7,12 @@ const PaginationPost = () => {
     readShop();
   }, [currentPage]);
   return (
-    <div style={{ display: "flex", justifyContent: "end" }}>
+    <div style={{ display: "flex", justifyContent: "end", color: "red" }}>
       <Pagination
         onChange={(e, value) => setCurrentPage(value)}
         count={totalPage}
         page={currentPage}
-        color="secondary"
+        // color="secondary"
       />
     </div>
   );

@@ -41,6 +41,7 @@ const Create = () => {
               name: name,
               plants: plants,
               price: price,
+              // quantity: 1,/
             })
           }
         >

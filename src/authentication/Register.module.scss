@@ -1,0 +1,31 @@
+.mainContainer {
+  margin-inline: 180px;
+  background-color: rgb(121, 114, 114);
+  margin-top: 130px;
+  padding: 20px 30px;
+  border-radius: 10px;
+  height: 370px;
+  h1 {
+    font-size: 30px;
+  }
+}
+.register {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  input {
+    padding: 10px 30px;
+    border-radius: 10px;
+    font-size: 15px;
+    color: black;
+    // font-weight: 500;
+  }
+  button {
+    padding: 10px;
+    border-radius: 10px;
+  }
+}
+@media (max-width:1030px) {
+  
+  
+}

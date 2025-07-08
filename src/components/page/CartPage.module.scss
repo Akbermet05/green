@@ -1,140 +1,299 @@
+// .plants_box {
+//   display: flex;
+//   justify-content: space-around;
+//   gap: 10px;
+//   width: 100%;
+//   padding-block: 50px;
+// }
+// .block {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: flex-start;
+//   gap: 20px;
+//   p {
+//     font-size: 15px;
+//   }
+// }
+// .box_image {
+//   display: flex;
+//   align-items: center;
+//   gap: 10px;
+//   img {
+//     width: 100%;
+//     max-width: 110px;
+//   }
+// }
+// .count {
+//   display: flex;
+//   align-items: center;
+//   gap: 20px;
+//   p {
+//     background-color: rgba(113, 156, 114, 0.701);
+//     padding: 5px 20px;
+//     border-radius: 20px;
+//     color: white;
+//   }
+// }
+// .cart_box1 {
+//   display: flex;
+//   flex-wrap: wrap;
+//   width: 100%;
+// }
+// .cart_box {
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+//   background-color: rgba(251, 251, 251, 1);
+//   width: 800px;
+//   padding: 20px 30px;
+//   // margin-bottom: 150px;
+//   margin-top: 40px;
+//   .ion {
+//     display: flex;
+//     align-items: center;
+//     gap: 30px;
+//     span {
+//       font-size: 25px;
+//       color: rgb(99, 96, 96);
+//     }
+//     p {
+//       color: rgba(38, 99, 39, 0.963);
+//     }
+//   }
+// }
+// .total {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: flex-start;
+//   gap: 20px;
+//   .Subtotal {
+//     display: flex;
+//     justify-content: space-between;
+//     gap: 80px;
+//   }
+//   .input {
+//     display: flex;
+//     input {
+//       width: 210px;
+//       height: 35px;
+//       border: 2px solid rgba(70, 163, 88, 1);
+//       padding-left: 10px;
+//     }
+//     button {
+//       padding: 8px 12px;
+//       background-color: rgba(70, 163, 88, 1);
+//       color: white;
+//     }
+//   }
+//   .btn {
+//     display: flex;
+//     flex-direction: column;
+//     gap: 10px;
+//     align-items: center;
+//     h3 {
+//       font-size: 14px;
+//       color: rgba(70, 163, 88, 1);
+//     }
+//     button {
+//       padding: 10px 50px;
+//       background-color: rgba(70, 163, 88, 1);
+//       color: white;
+//       font-size: 14px;
+//     }
+//   }
+// }
+// p,
+// h2 {
+//   color: rgba(61, 61, 61, 1);
+// }
+// @media (max-width: 1200px) {
+//   .cart_box1 {
+//     .cart_box {
+//       width: 674px;
+//       padding: 9px 24px;
+//       margin-top: 29px;
+//       .box_image {
+//         img {
+//           max-width: 97px;
+//         }
+//       }
+//     }
+//     .block {
+//       gap: 6px;
+//     }
+//   }
+//   .total {
+//     .input {
+//       input {
+//         width: 162px;
+//       }
+//     }
+//     .Subtotal {
+//       gap: 61px;
+//     }
+//     .btn {
+//       button {
+//         font-size: 12px;
+//       }
+//     }
+//   }
+// }
+
 .plants_box {
   display: flex;
-  justify-content: space-around;
-  gap: 10px;
-  width: 100%;
-  padding-block: 50px;
+  gap: 20px;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
-.block {
+
+.cart_box1 {
+  flex: 2;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   gap: 20px;
-  p {
-    font-size: 15px;
-  }
 }
+
+.cart_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 10px;
+  gap: 10px;
+  margin-top: 20px;
+}
+
 .box_image {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
+
   img {
-    width: 100%;
-    max-width: 110px;
+    width: 120px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
   }
 }
+
 .count {
   display: flex;
   align-items: center;
-  gap: 20px;
-  p {
-    background-color: rgba(113, 156, 114, 0.701);
-    padding: 5px 20px;
-    border-radius: 20px;
-    color: white;
+  gap: 10px;
+
+  button {
+    padding: 6px 10px;
+    border: none;
+    background-color: #eee;
+    cursor: pointer;
+  }
+
+  span {
+    min-width: 20px;
+    text-align: center;
   }
 }
-.cart_box1 {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-}
-.cart_box {
+
+.ion {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  background-color: rgba(251, 251, 251, 1);
-  width: 800px;
-  padding: 20px 30px;
-  // margin-bottom: 150px;
-  margin-top: 40px;
-  .ion {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    span {
-      font-size: 25px;
-      color: rgb(99, 96, 96);
-    }
-    p {
-      color: rgba(38, 99, 39, 0.963);
-    }
+  gap: 10px;
+}
+
+.total {
+  flex: 1;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 12px;
+  height: fit-content;
+
+  input {
+    padding: 8px;
+    width: 100%;
+  }
+
+  button {
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
   }
 }
-.total {
+
+.Subtotal {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.btn {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 20px;
-  .Subtotal {
-    display: flex;
-    justify-content: space-between;
-    gap: 80px;
+  gap: 10px;
+  margin-top: 20px;
+
+  button {
+    padding: 12px;
+    font-size: 16px;
   }
-  .input {
-    display: flex;
-    input {
-      width: 210px;
-      height: 35px;
-      border: 2px solid rgba(70, 163, 88, 1);
-      padding-left: 10px;
-    }
-    button {
-      padding: 8px 12px;
-      background-color: rgba(70, 163, 88, 1);
-      color: white;
-    }
+
+  h3 {
+    text-align: center;
+    color: blue;
+    cursor: pointer;
   }
-  .btn {
-    display: flex;
+}
+
+@media (max-width: 768px) {
+  .plants_box {
     flex-direction: column;
-    gap: 10px;
-    align-items: center;
-    h3 {
-      font-size: 14px;
-      color: rgba(70, 163, 88, 1);
-    }
-    button {
-      padding: 10px 50px;
-      background-color: rgba(70, 163, 88, 1);
-      color: white;
-      font-size: 14px;
-    }
   }
-}
-p,
-h2 {
-  color: rgba(61, 61, 61, 1);
-}
-@media (max-width: 1200px) {
-  .cart_box1 {
-    .cart_box {
-      width: 674px;
-      padding: 9px 24px;
-      margin-top: 29px;
-      .box_image {
-        img {
-          max-width: 97px;
-        }
-      }
-    }
-    .block {
-      gap: 6px;
-    }
+
+  .cart_box {
+    flex-direction: column;
+    align-items: flex-start;
   }
+
+  .box_image img {
+    width: 100px;
+  }
+
   .total {
-    .input {
-      input {
-        width: 162px;
-      }
-    }
-    .Subtotal {
-      gap: 61px;
-    }
-    .btn {
-      button {
-        font-size: 12px;
-      }
-    }
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cart_box {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .count button {
+    padding: 4px 8px;
+    font-size: 14px;
+  }
+
+  .btn button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .box_image {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .box_image img {
+    width: 80px;
+  }
+
+  .Subtotal p {
+    font-size: 14px;
   }
 }

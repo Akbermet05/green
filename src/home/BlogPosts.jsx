@@ -7,8 +7,8 @@ const BlogPosts = () => {
   return (
     <div className="container">
       {posts.map((el, index) => (
-        <div className={scss.posts}>
-          <div key={index} className={scss.posts_title}>
+        <div key={index} className={scss.posts}>
+          <div className={scss.posts_title}>
             <h1>{el.tittle}</h1>
             <p>{el.tittle1}</p>
           </div>

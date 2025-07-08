@@ -6,6 +6,7 @@ import Login from "../authentication/Login";
 import Register from "../authentication/Register";
 import DetailsPage from "../components/page/DetailsPage";
 import CartPage from "../components/page/CartPage";
+import ChekOutPage from "../components/page/ChekOutPage";
 
 const MainRoutes = () => {
   let routes = [
@@ -26,7 +27,11 @@ const MainRoutes = () => {
       element: <Register />,
     },
     { link: "/details/:id", element: <DetailsPage /> },
-    { link: "/cart/:id", element: <CartPage /> },
+    { link: "/cart", element: <CartPage /> },
+    {
+      link: "/chek",
+      element: <ChekOutPage />,
+    },
   ];
   return (
     <Routes>

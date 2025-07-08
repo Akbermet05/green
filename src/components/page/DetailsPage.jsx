@@ -9,21 +9,20 @@ import scss from "./DetailsPage.module.scss";
 import { useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import BlogPosts from "../../home/BlogPosts";
-const DetailsPage = ({ product }) => {
+const DetailsPage = () => {
   const { oneTask, Task, addToCart } = useShop();
+
   const { id } = useParams();
   const navigate = useNavigate();
-  // function handle() {
-  //   cart(oneTask);
-  //   navigate(`/cart/${oneTask._id}`);
-  // }
-
   useEffect(() => {
     Task(id);
   }, []);
-  const handleAdd = () => {
-    addToCart(product);
-    navigate("/cart");
+
+  const handleCart = () => {
+    if (oneTask) {
+      addToCart({ ...oneTask, count: 1 });
+      navigate("/cart");
+    }
   };
 
   return (
@@ -41,10 +40,10 @@ const DetailsPage = ({ product }) => {
               <p>
                 <div className={scss.star}>
                   <FaRegStar />
-                  {/* <FaRegStar />
                   <FaRegStar />
                   <FaRegStar />
-                  <FaRegStar /> */}
+                  <FaRegStar />
+                  <FaRegStar />
                   <h3>19 Customer Review</h3>
                 </div>
               </p>
@@ -58,7 +57,7 @@ const DetailsPage = ({ product }) => {
             </p>
             <div className={scss.btns}>
               <button>Buy NOW</button>
-              <button onClick={handleAdd}>Add to cart</button>
+              <button onClick={handleCart}>Add to cart</button>
             </div>
             <div className={scss.star1}>
               <span>

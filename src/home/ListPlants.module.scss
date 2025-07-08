@@ -21,7 +21,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 10px 
+  gap: 10px;
 }
 .box_plants {
   display: flex;
@@ -35,7 +35,7 @@
     align-items: flex-start;
     gap: 6px;
     img {
-      width:240px;
+      width: 240px;
       height: 230px;
       background-color: rgba(245, 245, 245, 0.888);
       padding: 20px 30px 50px;
@@ -119,6 +119,11 @@
 @media (max-width: 460px) {
   .plants_block {
     .category {
+      .all {
+        h2 {
+          font-size: 12px;
+        }
+      }
       h2 {
         font-size: 14px;
       }

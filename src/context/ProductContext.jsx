@@ -8,7 +8,7 @@ export const useShop = () => useContext(productContext);
 const initialState = {
   value: [],
   oneTask: {},
-  // plants: JSON.parse(localStorage.getItem("basket")) || [],
+  plants: JSON.parse(localStorage.getItem("basket")) || [],
 };
 
 const reducer = (state = initialState, action) => {
@@ -17,8 +17,35 @@ const reducer = (state = initialState, action) => {
       return { ...state, value: action.payload };
     case "GET_TASK":
       return { ...state, oneTask: action.payload };
+    case "INCREMENT":
+      return {
+        ...state,
+        plants: state.plants.map((item) =>
+          item._id === action.payload
+            ? { ...item, count: item.count + 1 }
+            : item
+        ),
+      };
+    case "DECREMENT":
+      return {
+        ...state,
+        plants: state.plants.map((item) =>
+          item._id === action.payload && item.count > 1
+            ? { ...item, count: item.count - 1 }
+            : item
+        ),
+      };
     case "GET_CART":
-      return { ...state, plants: action.payload };
+      const newCart = [...state.plants, action.payload];
+      localStorage.setItem("basket", JSON.stringify(newCart));
+      return { ...state, plants: newCart };
+
+    case "REMOVE":
+      const filtered = state.plants.filter(
+        (item) => item._id !== action.payload
+      );
+      localStorage.setItem("basket", JSON.stringify(filtered));
+      return { ...state, plants: filtered };
     default:
       return state;
   }
@@ -63,51 +90,30 @@ const ProductContext = ({ children }) => {
     readShop();
   }
 
-  // --------------->
-  // function cart(plants) {
-  //   const data = JSON.parse(localStorage.getItem("cart")) || [];
-  //   const cart = [...data, plants];
-  //   localStorage.setItem("cart", JSON.stringify(cart));
-  //   dispatch({
-  //     type: "GET_CART",
-  //     payload: plants,
-  //   });
-  // }
-  // function deleteShop(id) {
-  //   const data = JSON.parse(localStorage.getItem("cart")) || [];
-  //   const no = data.filter((el) => el._id !== id);
-  //   localStorage.setItem("cart", JSON.stringify(no));
-  //   dispatch({
-  //     type: "GET_CART",
-  //     payload: no,
-  //   });
-  // }
+  // cart
+  const addToCart = (add) => {
+    dispatch({
+      type: "GET_CART",
+      payload: add,
+    });
+  };
+  const increment = (id) => {
+    dispatch({ type: "INCREMENT", payload: id });
+    // localStorage.setItem("basket", JSON.stringify(state.plants))
+  };
 
-  // function addProductToCard(product) {
-  //   let card = JSON.parse(localStorage.getItem("card"));
-  //   if (!card) {
-  //     card = {
-  //       products: [],
-  //       totalPrice: 0,
-  //     };
-  //   }
-  //   let newProduct = {
-  //     item: product,
-  //     count: 1,
-  //     subPrice: +product,
-  //   };
-  //   card.products.push(newProduct);
-  //   localStorage.setItem("card", JSON.stringify(card));
-  // }
+  const decrement = (id) => {
+    dispatch({ type: "DECREMENT", payload: id });
+    // localStorage.setItem("basket", JSON.stringify(state.plants))
+  };
+  const removeFromCart = (id) => {
+    dispatch({
+      type: "REMOVE",
+      payload: id,
+    });
+  };
   // cart
 
-  const [basket, setBasket] = useState([]);
-
-  const addToCart = (add) => {
-    setBasket([...basket, add]);
-    readShop();
-  };
-  const totalPrice = basket.reduce((sum, item) => sum + item.price, 0);
   const values = {
     addShop,
     readShop,
@@ -122,11 +128,11 @@ const ProductContext = ({ children }) => {
     setSelectedColor,
     Task,
     oneTask: state.oneTask,
-    // plants: state.plants,
-    // cart,
-    basket,
     addToCart,
-    totalPrice,
+    state,
+    increment,
+    decrement,
+    removeFromCart,
   };
 
   return (

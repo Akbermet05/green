@@ -1,136 +1,3 @@
-// .header {
-//   .burger {
-//     display: none;
-//     font-size: 30px;
-//   }
-//   .nav {
-//     display: flex;
-//     align-items: center;
-//     gap: 20px;
-//     color: black;
-//     .active {
-//       display: flex;
-//     }
-//   }
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   border-bottom: 2px dotted rgba(70, 163, 88, 0.5);
-//   padding-block: 20px;
-//   img {
-//     width: 100%;
-//     max-width: 160px;
-//   }
-//   nav {
-//     display: flex;
-//     align-items: center;
-//     gap: 30px;
-//     a {
-//       color: rgba(61, 61, 61, 1);
-//       font-size: 20px;
-//       font-weight: 550;
-//     }
-//     a:hover {
-//       color: rgb(97, 201, 85);
-//     }
-//   }
-//   .ion {
-//     display: flex;
-//     align-items: center;
-//     gap: 20px;
-//     font-size: 20px;
-//     position: relative;
-//     .search {
-//       position: absolute;
-//       right: 150px;
-//     }
-//     input {
-//       border: 2px solid rgb(84, 166, 111);
-//       padding: 10px 20px;
-//       border-radius: 10px;
-//       font-size: 14px;
-//     }
-//     span {
-//       background-color: rgba(70, 163, 88, 1);
-//       width: 72px;
-//       height: 30px;
-//       display: flex;
-//       justify-content: center;
-//       align-items: center;
-//       gap: 7px;
-//       border-radius: 3px;
-//       font-size: 16px;
-//       color: white;
-//     }
-//   }
-// }
-// @media (max-width: 1024px) {
-//   .header {
-//     gap: 40px;
-//     nav a {
-//       // width: 100%;
-//       font-size: 14px;
-//     }
-//   }
-// }
-// @media (max-width: 770px) {
-//   .header {
-//     gap: 30px;
-//     img {
-//       max-width: 120px;
-//     }
-//     .ion {
-//       gap: 3px;
-//       font-size: 14px;
-//       span {
-//         font-size: 13px;
-//       }
-//     }
-//   }
-// }
-
-// @media (max-width: 640px) {
-//   .header {
-//     gap: 20px;
-//     img {
-//       max-width: 110px;
-//     }
-//     nav {
-//       display: none;
-//     }
-//     .ion {
-//       input {
-//         padding: 6px;
-//       }
-//       .shop {
-//         display: none;
-//       }
-//     }
-//   }
-// }
-// @media (max-width: 475px) {
-//   .header {
-//     .ion {
-//       span {
-//         display: none;
-//       }
-//       .search {
-//         left: 125px;
-//         font-size: 20px;
-//       }
-//     }
-//     .burger {
-//       display: flex;
-//     }
-//     nav a {
-//       font-size: 12px;
-//     }
-//     img {
-//       max-width: 90px;
-//     }
-//   }
-// }
-
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -143,6 +10,11 @@
   align-items: center;
   padding-block: 20px;
   flex-wrap: wrap;
+  .ion1 {
+    font-size: 20px;
+    margin-left: 30px;
+    margin-bottom: 10px;
+  }
 }
 
 .logo img {
@@ -164,8 +36,20 @@
   align-items: center;
   transition: all 0.3s ease;
 }
-
+.btn {
+  display: none;
+}
+.ion1 {
+  display: none;
+}
 .nav a {
+  .btn {
+    background-color: #1b8735;
+    padding: 10px 10px;
+    border-radius: 10px;
+    color: #ccc;
+    font-size: 12px;
+  }
   text-decoration: none;
   color: #333;
   font-weight: 500;
@@ -184,6 +68,12 @@
   display: flex;
   align-items: center;
   gap: 15px;
+  button {
+    background-color: #1b8735;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #ccc;
+  }
 }
 
 .iconBtn {
@@ -219,20 +109,35 @@
     padding: 10px;
     margin-top: 10px;
     border-radius: 8px;
+    a {
+      font-size: 12px;
+    }
   }
 
   .nav.active {
     display: flex;
   }
-.icon{
-  display: none;
-}
+  .icon {
+    display: none;
+  }
+  .ion {
+    display: none;
+  }
+  .ion1 {
+    display: flex;
+  }
+  .btn {
+    display: flex;
+  }
   .actions {
     flex-direction: column;
     align-items: stretch;
     width: 100%;
     margin-top: 10px;
     gap: 10px;
+    button {
+      display: none;
+    }
   }
 
   .searchinput {
